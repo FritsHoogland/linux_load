@@ -10,7 +10,7 @@ if [ -z "$1" ]; then
 fi
 
 for NR in $(seq 1 $1); do
-	./uninterruptible &
+	nohup ./uninterruptible > /dev/null 2>&1 &
 
 done
 

@@ -11,6 +11,11 @@ make
 ```
 ./loader 40
 ```
+3. The `loader` script will run the set number `uninterruptible` executables in the background. These executables will run for 60 seconds. If you want to cancel running the `uninterruptible` processes, press enter and the script will stop them right away. If you run the `uninterruptible` executable in your shell directly, the session is stuck, because the execution itself is not interruptible, as the name suggests.
+
+This actually means that the uninterruptible executable CANNOT be stopped or signalled with `kill`. However, the uninterruptible executable has an uninterruptible shell as parent, which, when killed/terminated will take down the uninterruptible executable as child.
+
+For high number of tasks, the 60 seconds might not be enough for the load figure to reach this number. If you still want the load figure to reach the number, increase the sleep in `uninterruptible.c`.
 
 Use at your own risk.
 
