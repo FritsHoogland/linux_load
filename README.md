@@ -22,6 +22,7 @@ By making the load figure include linux tasks in running state both on and off c
 If the addition of the uninterruptible sleep state would strictly have only meant a task waiting on ALL forms disk IO, it would more usable because the load would mean either CPU or disk IO or both (which is still not very usable). But it does not include all disk IO (think asynchronous IO), and the uninterruptible state is USUALLY disk IO, but not limited to that. This mini-toolkit uses a totally different uninterruptible state reason (vfork()).
 
 Today, there is the weird situation that many people are using this figure, yet it has become reasonably meaningless in real life. If you doubt my words, take a look at the `loadavg.c` linux kernel source file: <https://github.com/torvalds/linux/blob/master/kernel/sched/loadavg.c>
+
 ```
 /*
  * kernel/sched/loadavg.c
@@ -30,5 +31,9 @@ Today, there is the weird situation that many people are using this figure, yet 
  * figure. Its a silly number but people think its important. We go through
  * great pains to make it work on big machines and tickless kernels.
  */
+```
+If you weren't turned down by my comments and this remark, read on in the comments in the source starting from:
+```
+* Due to a number of reasons the above turns in the mess below:
 ```
 So overall, if you are serious about performance, this is not the number your are looking for. 
