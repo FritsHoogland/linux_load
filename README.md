@@ -44,3 +44,5 @@ If you weren't turned down by my comments and this remark, read on in the commen
 So overall, if you are serious about performance, this is not the number your are looking for. 
 
 Use at your own risk!
+
+The c program was copied from a stackexchange example: <https://unix.stackexchange.com/questions/134888/simulate-an-unkillable-process-in-d-state>
