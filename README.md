@@ -42,3 +42,5 @@ If you weren't turned down by my comments and this remark, read on in the commen
 * Due to a number of reasons the above turns in the mess below:
 ```
 So overall, if you are serious about performance, this is not the number your are looking for. 
+
+Use at your own risk!
