@@ -1,0 +1,18 @@
+#!/bin/bash
+if ! -f uninterruptible; then
+	echo "$0 requires the uninterruptible executable. run make?"
+	exit 1
+fi
+
+if [ -z "$1" ]; then
+	echo "$0 requires a number for running uninterruptible processes."
+	exit 1
+fi
+
+for NR in $(seq 1 $1); do
+	./uninterruptible &
+
+done
+
+read -p "Uninterruptible processes will run for 60 seconds, press any key to kill right away."
+kill -9  $(pgrep uninterruptible)
