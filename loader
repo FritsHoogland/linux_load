@@ -14,5 +14,5 @@ for NR in $(seq 1 $1); do
 
 done
 
-read -p "Uninterruptible processes will run for 60 seconds, press any key to kill right away."
+read -p "Uninterruptible processes will run for 60 seconds, press enter to kill right away."
 kill -9  $(pgrep uninterruptible)
