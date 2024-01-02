@@ -1,5 +1,5 @@
 #!/bin/bash
-if ! -f uninterruptible; then
+if [ ! -f uninterruptible ]; then
 	echo "$0 requires the uninterruptible executable. run make?"
 	exit 1
 fi
